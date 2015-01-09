@@ -24,3 +24,5 @@ proguard/
 
 # Log Files
 *.log
+gen-external-apklibs
+target
