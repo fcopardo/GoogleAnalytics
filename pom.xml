@@ -10,12 +10,24 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<platform.version>5.0.1_r2</platform.version>
-		<android.plugin.version>4.1.0</android.plugin.version>
+		<platform.version>4.4.2_r3</platform.version>
+		<android.plugin.version>3.8.2</android.plugin.version>
 		<java.version>1.7</java.version>
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.robolectric</groupId>
+			<artifactId>robolectric</artifactId>
+			<version>2.4</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
 		<dependency>
 			<groupId>android</groupId>
 			<artifactId>android</artifactId>
@@ -25,7 +37,7 @@
 		<dependency>
 			<groupId>com.google.android.gms</groupId>
 			<artifactId>google-play-services</artifactId>
-			<version>22.0.0</version>
+			<version>19.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.grizzly.apf</groupId>
@@ -36,6 +48,9 @@
 	</dependencies>
 
 	<build>
+		<sourceDirectory>src/main/java</sourceDirectory>
+		<testSourceDirectory>src/test/java</testSourceDirectory>
+
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -54,7 +69,7 @@
 				<extensions>true</extensions>
 				<configuration>
 					<sdk>
-						<platform>21</platform>
+						<platform>19</platform>
 					</sdk>
 				</configuration>
 			</plugin>

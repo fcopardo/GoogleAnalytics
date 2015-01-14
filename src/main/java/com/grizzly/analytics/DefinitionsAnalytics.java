@@ -24,7 +24,7 @@ public class DefinitionsAnalytics {
     /*
     AnalyticsByGoogle property key. Replace with a proper key in production mode.
      */
-    private static final String PROPERTY_APP = "UA-51752258-1";
+    private static String PROPERTY_APP = "UA-51752258-1";
 
 
     /* AnalyticsByGoogle strategies accesors. They mst mimic the ones in AnalyticsStrategy.java.
@@ -42,6 +42,10 @@ public class DefinitionsAnalytics {
 
     public static String getPropertyApp() {
         return PROPERTY_APP;
+    }
+
+    public static void setPropertyApp(String propertyApp) {
+        PROPERTY_APP = propertyApp;
     }
 
     /**

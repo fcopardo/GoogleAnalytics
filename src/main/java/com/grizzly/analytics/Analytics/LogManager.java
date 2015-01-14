@@ -37,10 +37,14 @@ public class LogManager {
      */
     private Context context;
     private SpecificMemoryStorage logMemoryStorage = new SpecificMemoryStorage();
+    private int myGlobalTracker = 0;
+    private int myEcommerceTracker = 0;
 
 
-    public LogManager(Context Context) {
+    public LogManager(Context Context, int MyGlobalTracker, int MyEcommerceTracker) {
         context = Context.getApplicationContext();
+        myEcommerceTracker = MyEcommerceTracker;
+        myGlobalTracker = MyGlobalTracker;
     }
 
     /**
@@ -73,7 +77,7 @@ public class LogManager {
      */
     private <T extends BaseAnalyticsLog> void doGoogleAnalytics(T logObject) {
 
-        AnalyticsByGoogle.initializeGoogleAnalytics(context.getApplicationContext());
+        AnalyticsByGoogle.initializeGoogleAnalytics(context.getApplicationContext(), myGlobalTracker, myEcommerceTracker);
         AnalyticsByGoogle.track(logObject);
     }
 
